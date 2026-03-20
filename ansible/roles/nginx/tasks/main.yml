@@ -1,0 +1,19 @@
+---
+- name: Ensure nginx is running
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+- name: Update nginx config with internal ALB DNS
+  lineinfile:
+    path: /etc/nginx/nginx.conf
+    regexp: 'proxy_pass'
+    line: "        proxy_pass http://{{ internal_alb_dns }};"
+  notify: restart nginx
+
+handlers:
+  - name: restart nginx
+    service:
+      name: nginx
+      state: restarted

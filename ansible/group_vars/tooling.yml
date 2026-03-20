@@ -1,0 +1,6 @@
+---
+db_host: "placeholder-update-after-terraform-apply"
+db_name: "toolingdb"
+db_user: "admin"
+db_password: "placeholder-update-after-terraform-apply"
+efs_access_point_id: "placeholder-update-after-terraform-apply"
