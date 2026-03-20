@@ -1,0 +1,11 @@
+[bastion]
+bastion-public-ip ansible_user=ec2-user
+
+[nginx]
+nginx-private-ip ansible_user=ec2-user ansible_ssh_common_args='-o ProxyJump=ec2-user@bastion-public-ip'
+
+[wordpress]
+wordpress-private-ip ansible_user=ec2-user ansible_ssh_common_args='-o ProxyJump=ec2-user@bastion-public-ip'
+
+[tooling]
+tooling-private-ip ansible_user=ec2-user ansible_ssh_common_args='-o ProxyJump=ec2-user@bastion-public-ip'

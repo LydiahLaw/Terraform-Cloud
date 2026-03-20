@@ -1,0 +1,12 @@
+---
+- name: Ensure httpd is running
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+
+- name: Ensure PHP-FPM is running
+  service:
+    name: php-fpm
+    state: started
+    enabled: yes

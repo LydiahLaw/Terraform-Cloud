@@ -1,0 +1,24 @@
+---
+- name: Configure Bastion host
+  hosts: bastion
+  become: yes
+  roles:
+    - bastion
+
+- name: Configure Nginx reverse proxy
+  hosts: nginx
+  become: yes
+  roles:
+    - nginx
+
+- name: Configure WordPress servers
+  hosts: wordpress
+  become: yes
+  roles:
+    - wordpress
+
+- name: Configure Tooling servers
+  hosts: tooling
+  become: yes
+  roles:
+    - tooling
