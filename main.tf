@@ -45,8 +45,6 @@ module "autoscaling" {
   tags               = var.tags
 }
 
-
-
 module "EFS" {
   source         = "./modules/EFS"
   subnet_ids     = [module.VPC.private_subnets-3, module.VPC.private_subnets-4]
