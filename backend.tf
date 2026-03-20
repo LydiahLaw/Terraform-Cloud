@@ -20,7 +20,7 @@ terraform {
     organization = "Lydiah-devops"
 
     workspaces {
-      name = "terraform-cloud-dev"
+      name = "terraform-cloud-prod"
     }
   }
 }
