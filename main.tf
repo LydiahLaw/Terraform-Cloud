@@ -27,7 +27,10 @@ module "ALB" {
 
 module "autoscaling" {
   source             = "./modules/autoscaling"
-  ami                = lookup(var.images, var.region, var.ami)
+  ami_bastion        = var.ami_bastion
+  ami_nginx          = var.ami_nginx
+  ami_wordpress      = var.ami_wordpress
+  ami_tooling        = var.ami_tooling
   keypair            = var.keypair
   bastion_sg         = module.security.bastion_sg
   nginx_sg           = module.security.nginx_sg
@@ -41,6 +44,8 @@ module "autoscaling" {
   availability_zones = data.aws_availability_zones.available.names
   tags               = var.tags
 }
+
+
 
 module "EFS" {
   source         = "./modules/EFS"

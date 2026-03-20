@@ -1,5 +1,21 @@
-variable "ami" {
-  type = string
+variable "ami_bastion" {
+  type        = string
+  description = "AMI ID for bastion host"
+}
+
+variable "ami_nginx" {
+  type        = string
+  description = "AMI ID for nginx server"
+}
+
+variable "ami_wordpress" {
+  type        = string
+  description = "AMI ID for wordpress server"
+}
+
+variable "ami_tooling" {
+  type        = string
+  description = "AMI ID for tooling server"
 }
 
 variable "keypair" {

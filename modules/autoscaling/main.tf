@@ -28,7 +28,7 @@ resource "random_shuffle" "az_list" {
 
 # Bastion Launch Template
 resource "aws_launch_template" "bastion-launch-template" {
-  image_id               = var.ami
+  image_id               = var.ami_bastion
   instance_type          = "t2.micro"
   vpc_security_group_ids = [var.bastion_sg]
 
@@ -88,7 +88,7 @@ resource "aws_autoscaling_group" "bastion-asg" {
 
 # Nginx Launch Template
 resource "aws_launch_template" "nginx-launch-template" {
-  image_id               = var.ami
+  image_id               = var.ami_nginx
   instance_type          = "t2.micro"
   vpc_security_group_ids = [var.nginx_sg]
 
@@ -154,7 +154,7 @@ resource "aws_autoscaling_attachment" "asg_attachment_nginx" {
 
 # WordPress Launch Template
 resource "aws_launch_template" "wordpress-launch-template" {
-  image_id               = var.ami
+  image_id               = var.ami_wordpress
   instance_type          = "t2.micro"
   vpc_security_group_ids = [var.webserver_sg]
 
@@ -220,7 +220,7 @@ resource "aws_autoscaling_attachment" "asg_attachment_wordpress" {
 
 # Tooling Launch Template
 resource "aws_launch_template" "tooling-launch-template" {
-  image_id               = var.ami
+  image_id               = var.ami_tooling
   instance_type          = "t2.micro"
   vpc_security_group_ids = [var.webserver_sg]
 

@@ -78,3 +78,23 @@ variable "images" {
     us-west-2    = "ami-0fcf52bcf5db7b003"
   }
 }
+
+variable "ami_bastion" {
+  type        = string
+  description = "AMI ID for bastion host built by Packer"
+}
+
+variable "ami_nginx" {
+  type        = string
+  description = "AMI ID for nginx server built by Packer"
+}
+
+variable "ami_wordpress" {
+  type        = string
+  description = "AMI ID for wordpress server built by Packer"
+}
+
+variable "ami_tooling" {
+  type        = string
+  description = "AMI ID for tooling server built by Packer"
+}

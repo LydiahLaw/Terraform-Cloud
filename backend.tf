@@ -17,7 +17,7 @@ terraform {
   }
 
   cloud {
-    organization = "lydiah-devops"
+    organization = "Lydiah-devops"
 
     workspaces {
       name = "terraform-cloud-dev"
