@@ -42,3 +42,13 @@ output "efs_id" {
   description = "EFS file system ID - needed for Ansible mounting config"
   value       = module.EFS.efs_id
 } 
+
+output "wordpress_access_point_id" {
+  description = "EFS access point ID for WordPress - needed for Ansible"
+  value       = module.EFS.wordpress_access_point_id
+}
+
+output "tooling_access_point_id" {
+  description = "EFS access point ID for Tooling - needed for Ansible"
+  value       = module.EFS.tooling_access_point_id
+}
